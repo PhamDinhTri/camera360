@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="#ffffff">
+
+    <com.guoxiaoxing.camera.widget.CommonTitleBar
+        android:id="@+id/title_layout"
+        style="@style/head_default"
+        app:leftBtnIcon="@drawable/back"
+        app:titleTxt="我的图库"/>
+
+    <com.guoxiaoxing.camera.widget.PagerSlidingTabStrip
+        android:id="@+id/indicator"
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:layout_below="@id/title_layout"
+        app:pstsIndicatorColor="@color/pink"
+        app:pstsIndicatorHeight="2dp"/>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/indicator"/>
+
+</RelativeLayout>

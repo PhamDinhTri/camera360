@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">material-design-camera</string>
+    <string name="app_name">MaterialDesignCamera</string>
+    <string name="action_settings">Settings</string>
 </resources>
