@@ -16,20 +16,20 @@ import android.view.ViewConfiguration;
 
 public class ImageViewTouch extends ImageViewTouchBase {
 
-    static final float                        SCROLL_DELTA_THRESHOLD = 1.0f;
-    protected ScaleGestureDetector            mScaleDetector;
-    protected GestureDetector                 mGestureDetector;
-    protected int                             mTouchSlop;
-    protected float                           mScaleFactor;
-    protected int                             mDoubleTapDirection;
-    protected OnGestureListener               mGestureListener;
-    protected OnScaleGestureListener          mScaleListener;
-    protected boolean                         mDoubleTapEnabled      = true;
-    protected boolean                         mScaleEnabled          = true;
-    protected boolean                         mScrollEnabled         = true;
+    static final float SCROLL_DELTA_THRESHOLD = 1.0f;
+    protected ScaleGestureDetector mScaleDetector;
+    protected GestureDetector mGestureDetector;
+    protected int mTouchSlop;
+    protected float mScaleFactor;
+    protected int mDoubleTapDirection;
+    protected OnGestureListener mGestureListener;
+    protected OnScaleGestureListener mScaleListener;
+    protected boolean mDoubleTapEnabled = true;
+    protected boolean mScaleEnabled = true;
+    protected boolean mScrollEnabled = true;
     private OnImageViewTouchDoubleTapListener mDoubleTapListener;
     private OnImageViewTouchSingleTapListener mSingleTapListener;
-    private OnZoomAnimationListener           onZoomAnimationListener;
+    private OnZoomAnimationListener onZoomAnimationListener;
 
     public ImageViewTouch(Context context) {
         super(context);
@@ -56,16 +56,43 @@ public class ImageViewTouch extends ImageViewTouchBase {
         mDoubleTapDirection = 1;
     }
 
+    protected OnGestureListener getGestureListener() {
+        return new GestureListener();
+    }
+
+    protected OnScaleGestureListener getScaleListener() {
+        return new ScaleListener();
+    }
+
+    @Override
+    protected void _setImageDrawable(final Drawable drawable, final Matrix initial_matrix,
+                                     float min_zoom, float max_zoom) {
+        super._setImageDrawable(drawable, initial_matrix, min_zoom, max_zoom);
+        mScaleFactor = getMaxScale() / 3;
+    }
+
+    @Override
+    protected void onZoomAnimationCompleted(float scale) {
+
+        if (LOG_ENABLED) {
+            Log.d(LOG_TAG, "onZoomAnimationCompleted. scale: " + scale + ", minZoom: "
+                    + getMinScale());
+        }
+
+        if (scale < getMinScale()) {
+            zoomTo(getMinScale(), 50);
+        }
+        if (onZoomAnimationListener != null) {
+            onZoomAnimationListener.onZoomAnimEnd(scale);
+        }
+    }
+
     public void setDoubleTapListener(OnImageViewTouchDoubleTapListener listener) {
         mDoubleTapListener = listener;
     }
 
     public void setSingleTapListener(OnImageViewTouchSingleTapListener listener) {
         mSingleTapListener = listener;
-    }
-
-    public void setDoubleTapEnabled(boolean value) {
-        mDoubleTapEnabled = value;
     }
 
     public void setScaleEnabled(boolean value) {
@@ -80,19 +107,8 @@ public class ImageViewTouch extends ImageViewTouchBase {
         return mDoubleTapEnabled;
     }
 
-    protected OnGestureListener getGestureListener() {
-        return new GestureListener();
-    }
-
-    protected OnScaleGestureListener getScaleListener() {
-        return new ScaleListener();
-    }
-
-    @Override
-    protected void _setImageDrawable(final Drawable drawable, final Matrix initial_matrix,
-                                     float min_zoom, float max_zoom) {
-        super._setImageDrawable(drawable, initial_matrix, min_zoom, max_zoom);
-        mScaleFactor = getMaxScale() / 3;
+    public void setDoubleTapEnabled(boolean value) {
+        mDoubleTapEnabled = value;
     }
 
     @Override
@@ -111,21 +127,11 @@ public class ImageViewTouch extends ImageViewTouchBase {
         return true;
     }
 
-
-    @Override
-    protected void onZoomAnimationCompleted(float scale) {
-
-        if (LOG_ENABLED) {
-            Log.d(LOG_TAG, "onZoomAnimationCompleted. scale: " + scale + ", minZoom: "
-                           + getMinScale());
-        }
-
-        if (scale < getMinScale()) {
+    public boolean onUp(MotionEvent e) {
+        if (getScale() < getMinScale()) {
             zoomTo(getMinScale(), 50);
         }
-        if (onZoomAnimationListener != null) {
-            onZoomAnimationListener.onZoomAnimEnd(scale);
-        }
+        return true;
     }
 
     protected float onDoubleTapPost(float scale, float maxZoom) {
@@ -172,24 +178,15 @@ public class ImageViewTouch extends ImageViewTouchBase {
         return true;
     }
 
-    public boolean onUp(MotionEvent e) {
-        if (getScale() < getMinScale()) {
-            zoomTo(getMinScale(), 50);
-        }
-        return true;
-    }
-
     public boolean onSingleTapUp(MotionEvent e) {
         return true;
     }
 
     /**
      * Determines whether this ImageViewTouch can be scrolled.
-     * 
-     * @param direction
-     *            - positive direction value means scroll from right to left,
-     *            negative value means scroll from left to right
-     * 
+     *
+     * @param direction - positive direction value means scroll from right to left,
+     *                  negative value means scroll from left to right
      * @return true if there is some more place to scroll, false - otherwise.
      */
     public boolean canScroll(int direction) {
@@ -214,42 +211,38 @@ public class ImageViewTouch extends ImageViewTouchBase {
 
     /**
      * 设置缩放动画监听
+     *
      * @param onZoomAnimationListener
      */
     public void setOnZoomAnimationListener(OnZoomAnimationListener onZoomAnimationListener) {
         this.onZoomAnimationListener = onZoomAnimationListener;
     }
 
+    public interface OnImageViewTouchDoubleTapListener {
+
+        void onDoubleTap();
+    }
+
+    public interface OnImageViewTouchSingleTapListener {
+
+        void onSingleTapConfirmed();
+    }
+
+    /**
+     * 缩放动画监听
+     *
+     * @author linjinfa 331710168@qq.com
+     * @date 2014年6月11日
+     */
+    public interface OnZoomAnimationListener {
+        void onZoomAnimEnd(float scale);
+    }
+
     public class GestureListener extends GestureDetector.SimpleOnGestureListener {
 
         @Override
-        public boolean onSingleTapConfirmed(MotionEvent e) {
-
-            if (null != mSingleTapListener) {
-                mSingleTapListener.onSingleTapConfirmed();
-            }
-
-            return ImageViewTouch.this.onSingleTapConfirmed(e);
-        }
-
-        @Override
-        public boolean onDoubleTap(MotionEvent e) {
-            Log.i(LOG_TAG, "onDoubleTap. double tap enabled? " + mDoubleTapEnabled);
-            if (mDoubleTapEnabled) {
-                mUserScaled = true;
-                float scale = getScale();
-                float targetScale = scale;
-                targetScale = onDoubleTapPost(scale, getMaxScale());
-                targetScale = Math.min(getMaxScale(), Math.max(targetScale, getMinScale()));
-                zoomTo(targetScale, e.getX(), e.getY(), DEFAULT_ANIMATION_DURATION);
-                invalidate();
-            }
-
-            if (null != mDoubleTapListener) {
-                mDoubleTapListener.onDoubleTap();
-            }
-
-            return super.onDoubleTap(e);
+        public boolean onSingleTapUp(MotionEvent e) {
+            return ImageViewTouch.this.onSingleTapUp(e);
         }
 
         @Override
@@ -289,13 +282,38 @@ public class ImageViewTouch extends ImageViewTouchBase {
         }
 
         @Override
-        public boolean onSingleTapUp(MotionEvent e) {
-            return ImageViewTouch.this.onSingleTapUp(e);
+        public boolean onDown(MotionEvent e) {
+            return ImageViewTouch.this.onDown(e);
         }
 
         @Override
-        public boolean onDown(MotionEvent e) {
-            return ImageViewTouch.this.onDown(e);
+        public boolean onDoubleTap(MotionEvent e) {
+            Log.i(LOG_TAG, "onDoubleTap. double tap enabled? " + mDoubleTapEnabled);
+            if (mDoubleTapEnabled) {
+                mUserScaled = true;
+                float scale = getScale();
+                float targetScale = scale;
+                targetScale = onDoubleTapPost(scale, getMaxScale());
+                targetScale = Math.min(getMaxScale(), Math.max(targetScale, getMinScale()));
+                zoomTo(targetScale, e.getX(), e.getY(), DEFAULT_ANIMATION_DURATION);
+                invalidate();
+            }
+
+            if (null != mDoubleTapListener) {
+                mDoubleTapListener.onDoubleTap();
+            }
+
+            return super.onDoubleTap(e);
+        }
+
+        @Override
+        public boolean onSingleTapConfirmed(MotionEvent e) {
+
+            if (null != mSingleTapListener) {
+                mSingleTapListener.onSingleTapConfirmed();
+            }
+
+            return ImageViewTouch.this.onSingleTapConfirmed(e);
         }
     }
 
@@ -312,14 +330,14 @@ public class ImageViewTouch extends ImageViewTouchBase {
                 if (mScaled && span != 0) {
                     mUserScaled = true;
                     targetScale = Math.min(getMaxScale(),
-                        Math.max(targetScale, getMinScale() - 0.1f));
+                            Math.max(targetScale, getMinScale() - 0.1f));
                     zoomTo(targetScale, detector.getFocusX(), detector.getFocusY());
                     mDoubleTapDirection = 1;
                     invalidate();
                     return true;
                 }
 
-                // This is to prevent a glitch the first time 
+                // This is to prevent a glitch the first time
                 // image is scaled.
                 if (!mScaled)
                     mScaled = true;
@@ -327,24 +345,5 @@ public class ImageViewTouch extends ImageViewTouchBase {
             return true;
         }
 
-    }
-
-    public interface OnImageViewTouchDoubleTapListener {
-
-        void onDoubleTap();
-    }
-
-    public interface OnImageViewTouchSingleTapListener {
-
-        void onSingleTapConfirmed();
-    }
-
-    /**
-     * 缩放动画监听
-     * @author linjinfa 331710168@qq.com
-     * @date 2014年6月11日
-     */
-    public interface OnZoomAnimationListener {
-        void onZoomAnimEnd(float scale);
     }
 }
