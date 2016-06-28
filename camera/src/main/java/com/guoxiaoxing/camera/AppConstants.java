@@ -4,7 +4,7 @@ import android.os.Environment;
 
 /**
  * Author: guoxiaoxing
- * Date: 16/6/28 下午8:01
+ * Date: 16/6/28 下午8:04
  * Function:
  * <p>
  * For more information, you can visit https://github.com/guoxiaoxing or contact me by guoxiaoxingv@163.com

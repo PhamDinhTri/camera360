@@ -9,7 +9,7 @@ import android.util.TypedValue;
 import android.view.View;
 import android.view.WindowManager;
 
-import com.github.skykai.stickercamera.R;
+import com.guoxiaoxing.camera.R;
 import com.guoxiaoxing.camera.widget.CommonTitleBar;
 import com.readystatesoftware.systembartint.SystemBarTintManager;
 

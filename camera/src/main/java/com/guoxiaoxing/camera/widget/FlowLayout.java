@@ -25,7 +25,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.github.skykai.stickercamera.R;
+import com.guoxiaoxing.camera.R;
 
 import java.util.ArrayList;
 import java.util.List;

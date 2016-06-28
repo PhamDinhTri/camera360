@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.github.skykai.stickercamera.R;
+import com.guoxiaoxing.camera.R;
 
 
 public class GenericProgressDialog extends AlertDialog {

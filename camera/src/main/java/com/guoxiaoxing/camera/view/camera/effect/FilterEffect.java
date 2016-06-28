@@ -1,7 +1,7 @@
 package com.guoxiaoxing.camera.view.camera.effect;
 
 
-import com.guoxiaoxing.camera.view.camera.util.GPUImageFilterTools;
+import com.guoxiaoxing.camera.util.GPUImageFilterTools;
 
 /**
  * @author tongqian.ni

@@ -11,8 +11,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.github.skykai.stickercamera.R;
 import com.guoxiaoxing.camera.AppConstants;
+import com.guoxiaoxing.camera.R;
 import com.guoxiaoxing.camera.util.BaseActivity;
 import com.guoxiaoxing.camera.util.StringUtils;
 

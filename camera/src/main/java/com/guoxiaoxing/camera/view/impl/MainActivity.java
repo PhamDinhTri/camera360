@@ -13,15 +13,15 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.alibaba.fastjson.JSON;
-import com.github.skykai.stickercamera.R;
 import com.guoxiaoxing.camera.AppConstants;
 import com.guoxiaoxing.camera.CameraApp;
-import com.guoxiaoxing.camera.interactor.model.FeedItem;
-import com.guoxiaoxing.camera.interactor.model.TagItem;
+import com.guoxiaoxing.camera.R;
+import com.guoxiaoxing.camera.model.FeedItem;
+import com.guoxiaoxing.camera.model.TagItem;
 import com.guoxiaoxing.camera.util.BaseActivity;
 import com.guoxiaoxing.camera.util.DataUtils;
 import com.guoxiaoxing.camera.util.StringUtils;
-import com.guoxiaoxing.camera.view.camera.CameraManager;
+import com.guoxiaoxing.camera.view.camera.effect.CameraManager;
 import com.guoxiaoxing.camera.widget.LabelView;
 import com.melnykov.fab.FloatingActionButton;
 

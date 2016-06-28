@@ -13,11 +13,11 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.github.skykai.stickercamera.R;
 import com.guoxiaoxing.camera.AppConstants;
 import com.guoxiaoxing.camera.CameraApp;
-import com.guoxiaoxing.camera.interactor.model.TagItem;
-import com.guoxiaoxing.camera.view.camera.util.EffectUtil;
+import com.guoxiaoxing.camera.R;
+import com.guoxiaoxing.camera.model.TagItem;
+import com.guoxiaoxing.camera.util.EffectUtil;
 
 
 /**

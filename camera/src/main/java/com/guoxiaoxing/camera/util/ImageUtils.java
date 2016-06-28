@@ -12,8 +12,8 @@ import android.os.AsyncTask;
 import android.provider.MediaStore;
 
 import com.guoxiaoxing.camera.CameraApp;
-import com.guoxiaoxing.camera.interactor.model.Album;
-import com.guoxiaoxing.camera.interactor.model.PhotoItem;
+import com.guoxiaoxing.camera.model.Album;
+import com.guoxiaoxing.camera.model.PhotoItem;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;

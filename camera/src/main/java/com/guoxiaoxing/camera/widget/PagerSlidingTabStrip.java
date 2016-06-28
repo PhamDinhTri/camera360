@@ -39,7 +39,7 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.github.skykai.stickercamera.R;
+import com.guoxiaoxing.camera.R;
 
 import java.util.Locale;
 
