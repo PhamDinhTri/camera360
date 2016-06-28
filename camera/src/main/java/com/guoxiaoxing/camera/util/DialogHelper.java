@@ -1,4 +1,4 @@
-package com.guoxiaoxing.camera.base.util;
+package com.guoxiaoxing.camera.util;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.github.skykai.stickercamera.R;
+import com.guoxiaoxing.camera.widget.GenericProgressDialog;
 
 
 public class DialogHelper {

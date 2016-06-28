@@ -2,7 +2,7 @@ package com.guoxiaoxing.camera.view.camera;
 
 import android.os.Bundle;
 
-import com.guoxiaoxing.camera.base.BaseFragmentActivity;
+import com.guoxiaoxing.camera.util.BaseFragmentActivity;
 
 
 public class CameraBaseFragmentActivity extends BaseFragmentActivity {

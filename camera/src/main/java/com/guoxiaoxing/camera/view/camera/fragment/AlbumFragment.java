@@ -10,9 +10,9 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
 
 import com.github.skykai.stickercamera.R;
+import com.guoxiaoxing.camera.interactor.model.PhotoItem;
 import com.guoxiaoxing.camera.view.camera.CameraManager;
 import com.guoxiaoxing.camera.view.camera.adapter.GalleryAdapter;
-import com.guoxiaoxing.camera.view.model.PhotoItem;
 
 import java.util.ArrayList;
 

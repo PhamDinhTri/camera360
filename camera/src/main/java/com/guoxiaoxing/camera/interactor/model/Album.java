@@ -1,4 +1,4 @@
-package com.guoxiaoxing.camera.view.model;
+package com.guoxiaoxing.camera.interactor.model;
 
 
 import com.guoxiaoxing.camera.util.StringUtils;

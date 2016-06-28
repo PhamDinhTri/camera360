@@ -16,8 +16,8 @@ import android.widget.TextView;
 import com.github.skykai.stickercamera.R;
 import com.guoxiaoxing.camera.AppConstants;
 import com.guoxiaoxing.camera.CameraApp;
+import com.guoxiaoxing.camera.interactor.model.TagItem;
 import com.guoxiaoxing.camera.view.camera.util.EffectUtil;
-import com.guoxiaoxing.camera.view.model.TagItem;
 
 
 /**

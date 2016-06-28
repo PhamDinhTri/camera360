@@ -9,12 +9,12 @@ import android.support.v4.view.ViewPager;
 
 import com.github.skykai.stickercamera.R;
 import com.guoxiaoxing.camera.AppConstants;
+import com.guoxiaoxing.camera.interactor.model.Album;
 import com.guoxiaoxing.camera.util.FileUtils;
 import com.guoxiaoxing.camera.util.ImageUtils;
 import com.guoxiaoxing.camera.util.StringUtils;
 import com.guoxiaoxing.camera.view.camera.CameraBaseActivity;
 import com.guoxiaoxing.camera.view.camera.fragment.AlbumFragment;
-import com.guoxiaoxing.camera.view.model.Album;
 import com.guoxiaoxing.camera.widget.PagerSlidingTabStrip;
 
 import java.util.ArrayList;

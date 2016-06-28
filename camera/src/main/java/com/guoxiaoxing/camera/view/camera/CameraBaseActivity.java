@@ -2,7 +2,7 @@ package com.guoxiaoxing.camera.view.camera;
 
 import android.os.Bundle;
 
-import com.guoxiaoxing.camera.base.BaseActivity;
+import com.guoxiaoxing.camera.util.BaseActivity;
 
 
 public class CameraBaseActivity extends BaseActivity {

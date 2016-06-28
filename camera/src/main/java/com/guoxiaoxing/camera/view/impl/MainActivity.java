@@ -1,4 +1,4 @@
-package com.guoxiaoxing.camera.view.ui;
+package com.guoxiaoxing.camera.view.impl;
 
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -16,12 +16,12 @@ import com.alibaba.fastjson.JSON;
 import com.github.skykai.stickercamera.R;
 import com.guoxiaoxing.camera.AppConstants;
 import com.guoxiaoxing.camera.CameraApp;
-import com.guoxiaoxing.camera.base.BaseActivity;
+import com.guoxiaoxing.camera.interactor.model.FeedItem;
+import com.guoxiaoxing.camera.interactor.model.TagItem;
+import com.guoxiaoxing.camera.util.BaseActivity;
 import com.guoxiaoxing.camera.util.DataUtils;
 import com.guoxiaoxing.camera.util.StringUtils;
 import com.guoxiaoxing.camera.view.camera.CameraManager;
-import com.guoxiaoxing.camera.view.model.FeedItem;
-import com.guoxiaoxing.camera.view.model.TagItem;
 import com.guoxiaoxing.camera.widget.LabelView;
 import com.melnykov.fab.FloatingActionButton;
 

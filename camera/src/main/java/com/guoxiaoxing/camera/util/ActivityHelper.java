@@ -1,10 +1,8 @@
-package com.guoxiaoxing.camera.base;
+package com.guoxiaoxing.camera.util;
 
 import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnCancelListener;
-
-import com.guoxiaoxing.camera.base.util.DialogHelper;
 
 
 public class ActivityHelper {

@@ -18,7 +18,7 @@
         android:largeHeap="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.guoxiaoxing.camera.view.ui.MainActivity"
+            android:name="com.guoxiaoxing.camera.view.impl.MainActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -44,7 +44,7 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"/>
         <activity
-            android:name="com.guoxiaoxing.camera.view.ui.EditTextActivity"
+            android:name="com.guoxiaoxing.camera.view.impl.EditTextActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"/>
 

@@ -9,9 +9,9 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 
 import com.github.skykai.stickercamera.R;
+import com.guoxiaoxing.camera.interactor.model.PhotoItem;
 import com.guoxiaoxing.camera.util.DistanceUtil;
 import com.guoxiaoxing.camera.util.ImageLoaderUtils;
-import com.guoxiaoxing.camera.view.model.PhotoItem;
 
 import java.util.List;
 

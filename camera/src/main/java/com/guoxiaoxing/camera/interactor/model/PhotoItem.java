@@ -1,4 +1,4 @@
-package com.guoxiaoxing.camera.view.model;
+package com.guoxiaoxing.camera.interactor.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;

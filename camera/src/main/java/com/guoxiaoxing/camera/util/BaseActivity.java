@@ -1,4 +1,4 @@
-package com.guoxiaoxing.camera.base;
+package com.guoxiaoxing.camera.util;
 
 import android.annotation.TargetApi;
 import android.content.DialogInterface;

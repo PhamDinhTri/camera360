@@ -15,7 +15,7 @@ import com.github.skykai.stickercamera.R;
 import com.guoxiaoxing.ImageViewTouch;
 import com.guoxiaoxing.camera.AppConstants;
 import com.guoxiaoxing.camera.CameraApp;
-import com.guoxiaoxing.camera.view.model.Addon;
+import com.guoxiaoxing.camera.interactor.model.Addon;
 import com.guoxiaoxing.camera.widget.LabelView;
 import com.guoxiaoxing.camera.widget.MyHighlightView;
 import com.guoxiaoxing.camera.widget.MyImageViewDrawableOverlay;

@@ -8,8 +8,8 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 
 import com.github.skykai.stickercamera.R;
+import com.guoxiaoxing.camera.interactor.model.Addon;
 import com.guoxiaoxing.camera.util.ImageLoaderUtils;
-import com.guoxiaoxing.camera.view.model.Addon;
 
 import java.util.List;
 

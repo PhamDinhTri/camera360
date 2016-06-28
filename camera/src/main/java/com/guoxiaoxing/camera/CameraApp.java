@@ -1,8 +1,12 @@
 package com.guoxiaoxing.camera;
 
 import android.app.Application;
+import android.support.annotation.NonNull;
 import android.util.DisplayMetrics;
 
+import com.guoxiaoxing.camera.injection.AppComponent;
+import com.guoxiaoxing.camera.injection.AppModule;
+import com.guoxiaoxing.camera.injection.DaggerAppComponent;
 import com.nostra13.universalimageloader.cache.disc.impl.UnlimitedDiskCache;
 import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
 import com.nostra13.universalimageloader.cache.memory.impl.LruMemoryCache;
@@ -19,6 +23,7 @@ import com.nostra13.universalimageloader.utils.StorageUtils;
 public class CameraApp extends Application {
 
     protected static CameraApp mInstance;
+    private AppComponent mAppComponent;
     private DisplayMetrics displayMetrics = null;
 
     public CameraApp() {
@@ -38,6 +43,11 @@ public class CameraApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+
+        mAppComponent = DaggerAppComponent.builder()
+                .appModule(new AppModule(this))
+                .build();
+
         initImageLoader();
         mInstance = this;
     }
@@ -106,5 +116,8 @@ public class CameraApp extends Application {
         return getCacheDir().getAbsolutePath();
     }
 
-
+    @NonNull
+    public AppComponent getAppComponent() {
+        return mAppComponent;
+    }
 }

@@ -1,4 +1,4 @@
-package com.guoxiaoxing.camera.view.ui;
+package com.guoxiaoxing.camera.view.impl;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -13,7 +13,7 @@ import android.widget.Toast;
 
 import com.github.skykai.stickercamera.R;
 import com.guoxiaoxing.camera.AppConstants;
-import com.guoxiaoxing.camera.base.BaseActivity;
+import com.guoxiaoxing.camera.util.BaseActivity;
 import com.guoxiaoxing.camera.util.StringUtils;
 
 import butterknife.ButterKnife;

@@ -6,11 +6,11 @@ import android.content.Intent;
 import android.net.Uri;
 
 import com.guoxiaoxing.camera.AppConstants;
+import com.guoxiaoxing.camera.interactor.model.PhotoItem;
 import com.guoxiaoxing.camera.util.ImageUtils;
 import com.guoxiaoxing.camera.view.camera.ui.CameraActivity;
 import com.guoxiaoxing.camera.view.camera.ui.CropPhotoActivity;
 import com.guoxiaoxing.camera.view.camera.ui.PhotoProcessActivity;
-import com.guoxiaoxing.camera.view.model.PhotoItem;
 
 import java.util.Stack;
 

@@ -1,4 +1,4 @@
-package com.guoxiaoxing.camera.base.util;
+package com.guoxiaoxing.camera.widget;
 
 import android.app.AlertDialog;
 import android.content.Context;
