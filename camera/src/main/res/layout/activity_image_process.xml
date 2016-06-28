@@ -57,7 +57,7 @@
         android:id="@+id/btn_area"
         android:layout_width="fill_parent"
         android:layout_height="50dp"
-        android:background="@color/blue"
+        android:background="@color/primary"
         android:orientation="horizontal">
 
         <TextView

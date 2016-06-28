@@ -8,14 +8,12 @@
         style="@style/head_default"
         app:titleTxt="贴纸相机"/>
 
-
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/title_layout"
         android:scrollbars="vertical"/>
-
 
     <com.melnykov.fab.FloatingActionButton
         android:id="@+id/fab"
@@ -29,6 +27,4 @@
         app:fab_colorNormal="?attr/colorPrimary"
         app:fab_colorPressed="?attr/colorPrimaryDark"
         app:fab_colorRipple="?attr/colorPrimary"/>
-
-
 </RelativeLayout>

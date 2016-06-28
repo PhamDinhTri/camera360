@@ -5,7 +5,7 @@ import android.content.res.AssetManager;
 import android.os.Environment;
 
 import com.guoxiaoxing.camera.CameraApp;
-import com.guoxiaoxing.camera.app.model.PhotoItem;
+import com.guoxiaoxing.camera.view.model.PhotoItem;
 
 import java.io.BufferedReader;
 import java.io.File;

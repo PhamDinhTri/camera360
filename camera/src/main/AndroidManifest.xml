@@ -14,11 +14,11 @@
         android:name="com.guoxiaoxing.camera.CameraApp"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
-        android:largeHeap="true"
         android:label="@string/app_name"
-        android:theme="@style/BlueTheme">
+        android:largeHeap="true"
+        android:theme="@style/AppTheme">
         <activity
-            android:name="com.guoxiaoxing.camera.app.ui.MainActivity"
+            android:name="com.guoxiaoxing.camera.view.ui.MainActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,22 +28,23 @@
         </activity>
 
         <activity
-            android:name="com.guoxiaoxing.camera.app.camera.ui.CameraActivity"
+            android:name="com.guoxiaoxing.camera.view.camera.ui.CameraActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"/>
         <activity
-            android:name="com.guoxiaoxing.camera.app.camera.ui.CropPhotoActivity"
+            android:name="com.guoxiaoxing.camera.view.camera.ui.CropPhotoActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"/>
         <activity
-            android:name="com.guoxiaoxing.camera.app.camera.ui.AlbumActivity"
+            android:name="com.guoxiaoxing.camera.view.camera.ui.AlbumActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"/>
         <activity
-            android:name="com.guoxiaoxing.camera.app.camera.ui.PhotoProcessActivity"
+            android:name="com.guoxiaoxing.camera.view.camera.ui.PhotoProcessActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"/>
-        <activity android:name="com.guoxiaoxing.camera.app.ui.EditTextActivity"
+        <activity
+            android:name="com.guoxiaoxing.camera.view.ui.EditTextActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"/>
 

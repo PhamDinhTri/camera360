@@ -16,8 +16,8 @@ import android.widget.ImageView;
 import com.github.skykai.stickercamera.R;
 import com.guoxiaoxing.ImageViewTouch;
 import com.guoxiaoxing.camera.CameraApp;
-import com.guoxiaoxing.camera.app.camera.util.Point2D;
-import com.guoxiaoxing.camera.app.camera.util.UIUtils;
+import com.guoxiaoxing.camera.view.camera.util.Point2D;
+import com.guoxiaoxing.camera.view.camera.util.UIUtils;
 import com.guoxiaoxing.camera.widget.drawable.EditableDrawable;
 import com.guoxiaoxing.camera.widget.drawable.FeatherDrawable;
 
